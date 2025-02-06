@@ -1,0 +1,103 @@
+ /* Estilos do header */
+ header {
+  background: linear-gradient(to right, orange, darkorange);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 50px; /* Espaço para o ícone de voltar */
+}
+
+/* Estilos do botão de home */
+.home-button {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgb(209, 30, 30);
+  font-size: 32px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.home-button:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  transform: translateY(-50%) scale(1.2);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+  margin: 0;
+  padding-top: 120px; /* Espaço superior após o header */
+}
+
+.max-w-4xl {
+  max-width: 90%;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: orange;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: darkorange;
+}
+
+.btn-green {
+  background-color: green;
+}
+
+.btn-green:hover {
+  background-color: darkgreen;
+}
+
+.table-container {
+  margin-top: 40px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-container th, .table-container td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+.table-container th {
+  background-color: #f2f2f2;
+}
+
+.table-container tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Ajuste no botão de voltar */
+.back-button img {
+  width: 20px;
+}
+

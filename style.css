@@ -1,0 +1,167 @@
+/* Resetando o estilo para uma base limpa */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Remover o estilo padrão dos links */
+.menu-item {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Container principal */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('img/1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Container do menu */
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Header com gradiente, sombra e fixo no topo */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(45deg, #FFA500, #FF7F50);
+    color: white;
+    font-size: 32px;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+/* Estilo do menu (usando Grid) */
+.menu {
+    display: grid;
+    grid-template-columns: repeat(3, 180px);
+    gap: 30px;
+    margin-top: 120px;
+    justify-content: center;
+}
+
+/* Estilo dos itens do menu */
+.menu-item {
+    width: 180px;
+    height: 180px;
+    background-color: #FFA500;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.menu-item i {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+/* Efeito de hover nos itens do menu */
+.menu-item:hover {
+    background-color: #FF7F50;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
+}
+
+.menu-item span {
+    font-size: 16px;
+    color: white;
+}
+
+/* Estilo do footer */
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #FFA500;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Responsividade: ajusta o layout para dispositivos menores */
+@media (max-width: 768px) {
+    .menu {
+        grid-template-columns: repeat(2, 160px);
+        gap: 20px;
+    }
+
+    .menu-item {
+        width: 160px;
+        height: 160px;
+        font-size: 16px;
+    }
+
+    .header {
+        font-size: 24px;
+        padding: 15px;
+    }
+
+    .menu-item i {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .menu-item {
+        width: 100%;
+        max-width: 280px;
+        height: 140px;
+        font-size: 14px;
+    }
+
+    .header {
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .footer {
+        font-size: 12px;
+    }
+
+    .menu-item i {
+        font-size: 28px;
+    }
+}

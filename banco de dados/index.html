@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>banco de dados</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header style="position: relative; padding: 10px;">
+        <h2 style="text-align: center; width: 100%;">banco de dados</h2>
+        <a href="../index.html" style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%);">
+            <img src="https://cdn-icons-png.flaticon.com/512/0/340.png" style="width: 20px;" alt="Ícone">
+        </a>
+    </header>
+    <h1>Dados gerais Moras&Barbosa</h1>
+    <div class="filtro-container">
+        <label for="busca">Filtrar Resultados:</label>
+        <input type="text" id="busca" placeholder="Digite para buscar..." oninput="filtrar()">
+        <button onclick="filtrar()">Buscar</button>
+      </div>
+        <section class="table-section">
+        <table id="resultTable">
+            <thead>
+                <tr>
+                    <th onclick="ativarFiltro(this)">ID CODIGO <span class="filter-icon"></span></th>
+                    <th onclick="ativarFiltro(this)">CODIGO INTERNO <span class="filter-icon"></span></th>
+                    <th onclick="ativarFiltro(this)">NOME PRODUTO<span class="filter-icon"></span></th>
+                    <th onclick="ativarFiltro(this)">FABRICANTE<span class="filter-icon"></span></th>
+                    <th onclick="ativarFiltro(this)">CUSTO<span class="filter-icon"></span></th>
+                    <th onclick="ativarFiltro(this)">VALOR VENDA<span class="filter-icon"></span></th>
+                    <th onclick="ativarFiltro(this)">SEQUENCIAL<span class="filter-icon"></span></th>
+                    <th onclick="ativarFiltro(this)">ESTOQUE<span class="filter-icon"></span></th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <!-- Dados da planilha serão exibidos aqui -->
+            </tbody>
+        </table>
+    </section>
+
+    
+   
+    <script src="https://cdn.jsdelivr.net/npm/papaparse/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+
+
+</body>
+</html>

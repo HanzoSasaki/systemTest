@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Cost Finder</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <!-- Loading Screen -->
+  <div id="loading" class="loading-overlay">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <a href="../index.html" class="home-button back-button">
+      <img src="https://cdn-icons-png.flaticon.com/512/0/340.png" alt="Home">
+    </a>
+    <h1 class="text-2xl font-bold text-center w-full">Filtro para analise</h1>
+  </header>
+
+  <div class="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-xl">
+    <!-- Conteúdo abaixo do header -->
+    <div class="mb-6">
+      <label class="block font-medium mb-2">Upload arquivo JSON </label>
+      <input id="jsonFile" type="file" accept="application/json" class="block w-full p-2 border rounded-md" />
+    </div>
+
+    <div class="mb-6">
+      <label class="block font-medium mb-2">COLE OS PRODUTOS PARA BUSCA</label>
+      <textarea id="productNames" rows="5" class="block w-full p-2 border rounded-md" placeholder="Enter product names here..."></textarea>
+    </div>
+
+    <button id="processButton" style="background-color: orange;" class="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-600">Filtrar dados</button>
+
+    <!-- Results Table -->
+    <div class="table-container mt-8">
+      <h2 class="text-xl font-bold mb-4">Resultados</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nome do produto</th>
+            <th>Custo</th>
+          </tr>
+        </thead>
+        <tbody id="resultTable"></tbody>
+      </table>
+    </div>
+
+    <button id="downloadButton" style="background-color: orange;" class="mt-6 w-full btn btn-green hidden">Download CSV</button>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Mostrar e esconder a tela de carregamento
+    function showLoading() {
+      document.getElementById('loading').classList.remove('hidden');
+    }
+
+    function hideLoading() {
+      document.getElementById('loading').classList.add('hidden');
+    }
+
+    // Simulação de carregamento de dados com delay
+    document.getElementById('processButton').addEventListener('click', function() {
+      showLoading(); // Mostrar loading
+      setTimeout(function() {
+        // Simulando o processamento dos dados
+        hideLoading(); // Esconder loading depois de 2 segundos
+        alert("Dados processados!");
+      }, 2000); // Delay de 2 segundos
+    });
+  </script>
+</body>
+</html>

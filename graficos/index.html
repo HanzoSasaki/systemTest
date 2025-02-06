@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Power BI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Loader de carregamento -->
+    <div class="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <header class="header">
+        <a href="../index.html" class="back-button">
+            <img src="https://cdn-icons-png.flaticon.com/512/0/340.png" alt="Ícone">
+        </a>
+        <h1>Visão de Dados - Power BI</h1>
+    </header>
+    <div class="dashboard">
+       
+        <div class="grid">
+            <div class="card" id="grafico1">
+                <h2>analise total por dia</h2>
+                <div class="grafico-content">
+                    <iframe width="754" height="438" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTtvK3X3YMZzQe3M1I5lz6AkpNcdR8RomqEPefP_meogRr3LeZXELjeHajUYf4Cv_lFItd7YFf84NLf/pubchart?oid=569563438&amp;format=interactive"></iframe>
+                </div>
+            </div>
+            <div class="card" id="grafico2">
+                <h2>margem por (R$)</h2>
+                <div class="grafico-content">
+                    <iframe width="1013" height="1013" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTtvK3X3YMZzQe3M1I5lz6AkpNcdR8RomqEPefP_meogRr3LeZXELjeHajUYf4Cv_lFItd7YFf84NLf/pubchart?oid=1886211152&amp;format=interactive"></iframe>
+                </div>
+            </div>
+            <div class="card" id="grafico3">
+                <h2>margem por (%)</h2>
+                <div class="grafico-content">
+                    <iframe width="906" height="445" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTtvK3X3YMZzQe3M1I5lz6AkpNcdR8RomqEPefP_meogRr3LeZXELjeHajUYf4Cv_lFItd7YFf84NLf/pubchart?oid=2038814731&amp;format=interactive"></iframe>
+                </div>
+            </div>
+            <div class="card" id="grafico4">
+                <h2>analise global de</h2>
+                <div class="grafico-content">
+                    <iframe width="709" height="445" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTtvK3X3YMZzQe3M1I5lz6AkpNcdR8RomqEPefP_meogRr3LeZXELjeHajUYf4Cv_lFItd7YFf84NLf/pubchart?oid=2092486712&amp;format=interactive"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

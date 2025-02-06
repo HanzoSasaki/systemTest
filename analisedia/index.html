@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software de Análise de Vendas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header style="position: relative; padding: 10px;">
+        <h2 style="text-align: center; width: 100%;">Análise Diária FASTSHOP</h2>
+        <a href="../index.html" style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%);">
+            <img src="https://cdn-icons-png.flaticon.com/512/0/340.png" style="width: 20px;" alt="Ícone">
+        </a>
+    </header>
+    
+        
+        
+        
+   
+
+    <h1>RESUMO GERAL</h1> 
+
+<div class="chart-container">
+    <div class="chart-box">
+      <button class="open-modal" onclick="openModal(1)">
+        <i class="fas fa-calendar-day"></i> Lucro por dia
+      </button>
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal(1)">&times;</span>
+          <h1><i class="fas fa-calendar-day"></i> Lucro por dia</h1>
+          <iframe width="1894" height="438" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTtvK3X3YMZzQe3M1I5lz6AkpNcdR8RomqEPefP_meogRr3LeZXELjeHajUYf4Cv_lFItd7YFf84NLf/pubchart?oid=569563438&amp;format=interactive"></iframe>
+          <p>
+
+           
+          </p>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="chart-box">
+      <button class="open-modal" onclick="openModal(2)">
+        <i class="fas fa-dollar-sign"></i> Margem em R$
+      </button>
+      <div id="modal2" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal(2)">&times;</span>
+          <h1><i class="fas fa-dollar-sign"></i> Margem em R$</h1>
+          <iframe seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTtvK3X3YMZzQe3M1I5lz6AkpNcdR8RomqEPefP_meogRr3LeZXELjeHajUYf4Cv_lFItd7YFf84NLf/pubchart?oid=1073681321&amp;format=interactive"></iframe>
+          <p>
+
+
+            
+          </p>
+         
+        </div>
+      </div>
+    </div>
+  
+    <div class="chart-box">
+      <button class="open-modal" onclick="openModal(3)">
+        <i class="fas fa-percent"></i> Margem em %
+      </button>
+      <div id="modal3" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal(3)">&times;</span>
+          <h1><i class="fas fa-percent"></i> Margem em %</h1>
+          <iframe seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTtvK3X3YMZzQe3M1I5lz6AkpNcdR8RomqEPefP_meogRr3LeZXELjeHajUYf4Cv_lFItd7YFf84NLf/pubchart?oid=2038814731&amp;format=interactive"></iframe>
+          
+          
+          <p>
+            
+
+            
+
+          </p>
+         
+        </div>
+      </div>
+    </div>
+</div>
+
+      
+      
+
+
+    <h1>FONTE DE DADOS</h1>
+    <div class="filtro-container">
+        <label for="busca">Filtrar Resultados:</label>
+        <input type="text" id="busca" placeholder="Digite para buscar..." oninput="filtrar()">
+        <button onclick="filtrar()">Buscar</button>
+      </div>
+        <section class="table-section">
+        <table id="resultTable">
+            <thead>
+                <tr>
+                    <th onclick="ativarFiltro(this)">SKU <span class="filter-icon"></span></th>
+                    <th onclick="ativarFiltro(this)">Número do Pedido <span class="filter-icon"></span></th>
+                    <th onclick="ativarFiltro(this)">Nome do Produto <span class="filter-icon"></span></th>
+                    <th onclick="ativarFiltro(this)">Loja <span class="filter-icon"></span></th>
+                    <th onclick="ativarFiltro(this)">Custo (R$) <span class="filter-icon"></span></th>
+                    <th onclick="ativarFiltro(this)">Preço de Venda (R$) <span class="filter-icon"></span></th>
+                    <th onclick="ativarFiltro(this)">Imposto (%) <span class="filter-icon"></span></th>
+                    <th onclick="ativarFiltro(this)">Comissão (%) <span class="filter-icon"></span></th>
+                    <th onclick="ativarFiltro(this)">Taxa de Pedido (R$) <span class="filter-icon"></span></th>
+                    <th onclick="ativarFiltro(this)">Margem Líquida (R$) <span class="filter-icon"></span></th>
+                    <th onclick="ativarFiltro(this)">Margem (%) <span class="filter-icon"></span></th>
+                    <th onclick="ativarFiltro(this)">Data <span class="filter-icon"></span></th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <!-- Dados da planilha serão exibidos aqui -->
+            </tbody>
+        </table>
+    </section>
+
+    
+   
+    <script src="https://cdn.jsdelivr.net/npm/papaparse/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        const sheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTtvK3X3YMZzQe3M1I5lz6AkpNcdR8RomqEPefP_meogRr3LeZXELjeHajUYf4Cv_lFItd7YFf84NLf/pub?output=csv';
+        
+        // Função para carregar os dados da planilha
+        fetch(sheetUrl)
+            .then(response => response.text())
+            .then(csv => {
+                // Converter CSV para array
+                const data = Papa.parse(csv, {header: true, skipEmptyLines: true});
+                const tableBody = document.querySelector('#table-body');
+
+                // Preencher a tabela com os dados
+                data.data.forEach((row) => {
+                    const tr = document.createElement('tr');
+
+                    Object.keys(row).forEach((key) => {
+                        const td = document.createElement('td');
+                        td.textContent = row[key];
+                        tr.appendChild(td);
+                    });
+
+                    tableBody.appendChild(tr);
+                });
+            })
+            .catch(error => console.error('Erro ao carregar dados da planilha:', error));
+    </script>
+
+</body>
+</html>

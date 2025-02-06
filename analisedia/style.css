@@ -1,0 +1,427 @@
+/* Estilos básicos para o layout */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Estilo do container de gráficos */
+.chart-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Caixa do gráfico */
+.chart-box {
+    margin-right: 8px; /* Espaço entre o ícone e o texto */
+    font-size: 20px;
+    flex: 1;
+    min-width: 300px;
+    max-width: 33%;
+    height: 100px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+/* Estilo do botão do modal */
+button.open-modal {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: #FFA500; /* Cor laranja */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Efeito hover do botão do modal */
+button.open-modal:hover {
+    background-color: #FF7F00;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Animação de fade-in + slide */
+@keyframes modalOpen {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px); /* Começa um pouco acima */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Vai até a posição final */
+    }
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    animation: modalOpen 0.5s ease-out; /* Aplica a animação quando o modal for exibido */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 800px;
+    animation: modalOpen 0.5s ease-out; /* Aplica animação no conteúdo também */
+}
+
+/* Efeito para o botão de fechar */
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+/* Efeito de hover para o botão de fechamento */
+.close:hover {
+    color: #ff7f00;
+}
+
+/* Estilo do Texto (P) dentro do Modal */
+.modal-content p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #333;
+    background-color: #f9f9f9;
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    /* white-space: pre-wrap; Quebra de linha do texto */
+    word-wrap: break-word; /* Quebra de palavras longas */
+}
+
+/* Melhorando o espaçamento para uma leitura mais fluída */
+.modal-content p + p {
+    margin-top: 20px;
+}
+
+.modal-content p:first-child {
+    margin-top: 0; /* Remove margem superior no primeiro parágrafo */
+}
+
+/* Adicionando mais espaçamento para legibilidade */
+.modal-content p {
+    letter-spacing: 0.5px; /* Aumenta o espaçamento entre letras para melhorar a leitura */
+    text-align: justify; /* Justifica o texto para uma melhor distribuição */
+}
+
+/* Estilo do botão de fechar */
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+}
+
+/* Efeito hover no botão de fechar */
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+/* Estilo do iframe */
+iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+}
+
+/* Estilo do header */
+header {
+    background-color: #ff7f00;
+    padding: 20px;
+    height: 100px;
+    text-align: center;
+    color: #fff;
+    font-size: 2.5em;
+    border-bottom: 4px solid #e56b00;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título dentro do header */
+header h1 {
+    color: #ffffff;
+    margin: 0;
+    font-size: 2em;
+}
+
+/* Títulos de seções */
+h2, h1 {
+    text-align: center;
+    margin: 1rem 0;
+    color: #333;
+}
+
+/* Estilo do campo de filtro */
+.filtro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    padding: 0 1rem;
+}
+
+.filtro-container label {
+    font-size: 1rem;
+    color: #333;
+    margin-right: 0.5rem;
+}
+
+#busca {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+#busca:focus {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+/* Estilo do botão de filtro */
+.filtro-container button {
+    padding: 10px 20px;
+    background-color: #ff7f00;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.filtro-container button:hover {
+    background-color: #e56b00;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Mensagem do filtro */
+.filtro-mensagem {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Estilo do fundo da tabela */
+.table-section {
+    background-image: url('../'); /* Insira o link da imagem aqui */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Estilo da tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Cabeçalho da tabela */
+th {
+    background-color: #f2f2f2;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+/* Estilo para valores negativos */
+.negative {
+    color: red;
+    font-weight: bold;
+}
+
+/* Estilo para valores positivos */
+.positive {
+    color: green;
+    font-weight: bold;
+}
+
+td {
+    background-color: #fff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Efeito de hover nas linhas da tabela */
+tbody tr:hover {
+    background-color: #eaeaea;
+    transition: background-color 0.3s ease;
+}
+
+tbody tr:nth-child(even):hover {
+    background-color: #e0e0e0;
+}
+
+/* Estilo dos gráficos */
+canvas {
+    display: block;
+    width: 100%;
+    height: 500px;
+    margin-top: 30px;
+}
+
+/* Estilo dos ícones de filtro nas colunas */
+.filter-icon {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+/* Estilo dos botões de upload e processamento */
+.upload-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 20px;
+}
+
+#uploadFile {
+    flex-grow: 1;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Estilo geral dos botões */
+button {
+    padding: 12px 25px;
+    background-color: #ff7f00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+button:hover {
+    background-color: #e56b00;
+    transform: scale(1.1);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    table, canvas {
+        width: 100%;
+    }
+
+    canvas {
+        height: 300px;
+    }
+
+    .grafico-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .grafico-btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+
+/* Estilos para o loader */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease-out; /* Transição suave ao esconder */
+}
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db; /* Cor da parte superior */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite; /* Animação de rotação */
+}
+
+/* Animação de rotação */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Animação de desaparecer o loader */
+.loaded #loader {
+    opacity: 0;
+    pointer-events: none; /* Impede que o loader bloqueie a interação após desaparecer */
+}
