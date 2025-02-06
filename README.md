@@ -1,4 +1,4 @@
-Claro, aqui está um README mais detalhado, com todas as informações organizadas de forma mais completa, sem a parte do clone:
+
 
 ---
 
