@@ -3,7 +3,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: rgb(237, 236, 236);
 }
 
 /* Estilo do container de gráficos */
@@ -35,7 +35,7 @@ button.open-modal {
     width: 100%;
     height: 100%;
     border: none;
-    background-color: #FFA500; /* Cor laranja */
+    background-color: #7A1F78; /* Cor roxa */
     color: white;
     font-size: 16px;
     cursor: pointer;
@@ -46,7 +46,7 @@ button.open-modal {
 
 /* Efeito hover do botão do modal */
 button.open-modal:hover {
-    background-color: #FF7F00;
+    background-color: #D662E1; /* Rosa claro */
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
@@ -105,13 +105,6 @@ button.open-modal:hover {
     cursor: pointer;
 }
 
-
-
-/* Efeito de hover para o botão de fechamento */
-.close:hover {
-    color: #ff7f00;
-}
-
 /* Estilo do Texto (P) dentro do Modal */
 .modal-content p {
     font-size: 1.15rem;
@@ -122,7 +115,6 @@ button.open-modal:hover {
     border-radius: 8px;
     box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
-    /* white-space: pre-wrap; Quebra de linha do texto */
     word-wrap: break-word; /* Quebra de palavras longas */
 }
 
@@ -141,40 +133,15 @@ button.open-modal:hover {
     text-align: justify; /* Justifica o texto para uma melhor distribuição */
 }
 
-/* Estilo do botão de fechar */
-.close {
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-    position: absolute;
-    top: 10px;
-    right: 25px;
-    cursor: pointer;
-}
-
-/* Efeito hover no botão de fechar */
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-}
-
-/* Estilo do iframe */
-iframe {
-    width: 100%;
-    height: 400px;
-    border: none;
-}
-
 /* Estilo do header */
 header {
-    background-color: #ff7f00;
+    background-color: #5B0F5E; /* Gradiente roxo */
     padding: 20px;
     height: 100px;
     text-align: center;
     color: #fff;
     font-size: 2.5em;
-    border-bottom: 4px solid #e56b00;
+    border-bottom: 4px solid #B34BE5; /* Gradiente roxo */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -226,7 +193,7 @@ h2, h1 {
 /* Estilo do botão de filtro */
 .filtro-container button {
     padding: 10px 20px;
-    background-color: #ff7f00;
+    background-color: #7A1F78; /* Cor roxa */
     color: white;
     border: none;
     border-radius: 8px;
@@ -237,16 +204,9 @@ h2, h1 {
 }
 
 .filtro-container button:hover {
-    background-color: #e56b00;
+    background-color: #D662E1; /* Rosa claro */
     transform: translateY(-2px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Mensagem do filtro */
-.filtro-mensagem {
-    margin-top: 5px;
-    font-size: 0.9rem;
-    color: #666;
 }
 
 /* Estilo do fundo da tabela */
@@ -346,7 +306,7 @@ canvas {
 /* Estilo geral dos botões */
 button {
     padding: 12px 25px;
-    background-color: #ff7f00;
+    background-color: #7A1F78; /* Cor roxa */
     color: white;
     border: none;
     border-radius: 5px;
@@ -358,7 +318,7 @@ button {
 }
 
 button:hover {
-    background-color: #e56b00;
+    background-color: #D662E1; /* Rosa claro */
     transform: scale(1.1);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
@@ -387,7 +347,6 @@ button:hover {
         margin-bottom: 10px;
     }
 }
-
 
 /* Estilos para o loader */
 #loader {
@@ -425,3 +384,13 @@ button:hover {
     opacity: 0;
     pointer-events: none; /* Impede que o loader bloqueie a interação após desaparecer */
 }
+/* Classe para números positivos em verde */
+.positivo {
+    color: green;
+  }
+  
+  /* Classe para números negativos em vermelho */
+  .negativo {
+    color: red;
+  }
+  

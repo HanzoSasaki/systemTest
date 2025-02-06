@@ -8,9 +8,12 @@
 /* Corpo e background da página */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f7fc;
-    color: #333;
-    height: 100vh; /* Altura total da tela */
+    background-color: rgb(237, 236, 236);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #D1C4E9; /* Tom suave de lavanda */
+    height: 100vh;
 }
 
 /* Contêiner principal do dashboard */
@@ -18,71 +21,85 @@ body {
     max-width: 100%;
     margin: 0 auto;
     padding: 20px;
-    height: 100%; /* Faz a altura ocupar 100% da tela */
+    height: 100%;
 }
 
 /* Estilo do header */
 .header {
-    background-color: #ff7a29; /* Cor laranja */
+    background: linear-gradient(45deg, #4B0082, #7B68EE); /* Gradiente roxo inspirado em nebulosas */
     color: white;
     padding: 20px 40px;
     display: flex;
     align-items: center;
-    justify-content: center; /* Centraliza o texto */
+    justify-content: center;
     position: relative;
     width: 100%;
-    height: 100px; /* Altura do header */
+    height: 100px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
 .header h1 {
     font-size: 2rem;
 }
 
-/* Estilo para o botão de voltar */
+
+
+/* Ajuste no botão de voltar */
+/* Estilos para o botão de voltar */
 .back-button {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+  position: fixed;
+  top: 30px;
+  left: 20px;
+  z-index: 1000;
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Transição para animação */
 }
 
 .back-button img {
-    width: 20px;
+  width: 20px;
+  transition: transform 0.3s ease; /* Animação para o ícone */
 }
 
-/* Estilo do grid de 4 cards, com divisão igual */
+/* Animação no hover */
+.back-button:hover img {
+  transform: scale(1.2); /* Aumenta o tamanho do ícone quando o cursor passa por cima */
+}
+
+
+/* Estilo do grid de 4 cards */
 .grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
-    grid-template-rows: repeat(2, 1fr); /* 2 linhas */
-    gap: 20px; /* Espaço entre os cards */
-    height: 100%; /* Faz com que a grid ocupe 100% da altura disponível */
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    height: 100%;
 }
 
 /* Estilo de cada card */
 .card {
-    background-color: white;
+    background-color: rgba(75, 0, 130, 0.7); /* Roxo translúcido */
     border-radius: 8px;
     padding: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s, box-shadow 0.3s;
-    width: 100%; /* O card ocupa 100% da largura da célula */
-    height: 100%; /* O card ocupa 100% da altura da célula */
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction: column; /* Para centralizar o conteúdo */
+    flex-direction: column;
     justify-content: space-between;
+    color: white;
 }
 
 /* Efeito de hover nos cards */
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
 /* Título de cada gráfico */
 .card h2 {
     font-size: 1.5rem;
-    color: #555;
+    color: #EDE7F6;
     margin-bottom: 15px;
     text-align: center;
 }
@@ -90,29 +107,29 @@ body {
 /* Estilo do conteúdo do gráfico */
 .grafico-content {
     align-items: center;
-    background-color: #f9f9f9;
+    background-color: rgba(75, 0, 130, 0.3);
     border-radius: 8px;
-    width: 100%; /* Faz com que ocupe toda a largura do card */
-    height: 100%; /* Faz com que ocupe toda a altura do card */
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #ddd;
+    border: 1px solid #7B68EE;
 }
 
 /* Aumentando a largura do iframe para preencher mais espaço */
 .grafico-content iframe {
-    width: 100%; /* O gráfico ocupa toda a largura do card */
-    height: 100%; /* O gráfico ocupa toda a altura do card */
+    width: 100%;
+    height: 100%;
     border: none;
-    object-fit: contain; /* Ajusta o conteúdo para que não seja cortado */
+    object-fit: contain;
 }
 
 /* Responsividade para telas menores */
 @media (max-width: 768px) {
     .grid {
-        grid-template-columns: 1fr; /* Em telas menores, apenas uma coluna */
+        grid-template-columns: 1fr;
     }
 
     .grafico-content iframe {
@@ -128,7 +145,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -136,8 +153,8 @@ body {
 }
 
 .loader .spinner {
-    border: 4px solid #f3f3f3; /* Cor clara */
-    border-top: 4px solid #3498db; /* Cor do spinner */
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #7B68EE;
     border-radius: 50%;
     width: 50px;
     height: 50px;

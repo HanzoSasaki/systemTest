@@ -1,103 +1,56 @@
- /* Estilos do header */
- header {
-  background: linear-gradient(to right, orange, darkorange);
-  color: white;
-  padding: 1.5rem;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+html,body{height:100%;max-width:100%;margin:0;overflow:hidden;background:rgba(0,10,20,1) url(https://i.imgur.com/r838U7u.jpg) center no-repeat;background-size:cover;image-rendering: pixelated; font-family:sans-serif}
+#space{width:100%}
+#warp{position:absolute;z-index:9;bottom:0;left:0;right:0;margin:20px auto;color:rgba(209, 255, 255,1);border:2px solid;padding:1em;width:10em;text-align:center;font-weight:700;font-size:1.2em;display:inline-block;text-decoration:none;background:rgba(0,0,0,0.8);
+transition:all 0.2s}
+#warp:hover{
+    box-shadow: 0 0 10px #eef, 0 0 12px #a0cdff inset;
+    text-shadow: 0 0 12px #489cfa, 0 0 5px #fff;
+}
+
+/* follow me @nodws */
+#btn-twtr{
+
+
   position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-left: 50px; /* Espaço para o ícone de voltar */
-}
-
-/* Estilos do botão de home */
-.home-button {
-  position: absolute;
+  top: 30px;
   left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: rgb(209, 30, 30);
-  font-size: 32px;
-  text-decoration: none;
-  padding: 10px;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-}
-
-.home-button:hover {
-  background-color: rgba(0, 0, 0, 0.2);
-  transform: translateY(-50%) scale(1.2);
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: white;
-  margin: 0;
-  padding-top: 120px; /* Espaço superior após o header */
-}
-
-.max-w-4xl {
-  max-width: 90%;
-  margin: 0 auto;
-  padding-top: 40px;
-}
-
-.btn {
-  padding: 10px 20px;
-  background-color: orange;
-  color: white;
-  border-radius: 5px;
+  z-index: 1000;
   cursor: pointer;
-  transition: all 0.3s ease;
-}
+  color:#fff;
+  border:2px solid;
+  border-radius:3px;
+  text-align:center;
+  text-decoration:none;
+  display:block;
+  font-family:sans-serif;
+  font-size:14px;
+  width:13em;
+  padding:5px 10px;
+  font-weight:600;
+  position:absolute;
+  top:0;
+  right:10%;
+  margin:90vh 0;
+  background:rgba(0,0,0,0.2);
+  box-shadow:0 0 0px 3px rgba(0,0,0,0.2);
+  opacity:0.3
+}#btn-twtr:hover{color:#fff;opacity:1}
 
-.btn:hover {
-  background-color: darkorange;
-}
 
-.btn-green {
-  background-color: green;
-}
-
-.btn-green:hover {
-  background-color: darkgreen;
-}
-
-.table-container {
-  margin-top: 40px;
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.table-container table {
+.header {
+  background: linear-gradient(45deg, #4B0082, #7B68EE); /* Gradiente roxo inspirado em nebulosas */
+  color: white;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   width: 100%;
-  border-collapse: collapse;
+  height: 100px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+ 
 }
 
-.table-container th, .table-container td {
-  padding: 12px;
-  text-align: left;
-  border: 1px solid #ccc;
+.header h1 {
+  font-size: 2rem;
 }
-
-.table-container th {
-  background-color: #f2f2f2;
-}
-
-.table-container tr:hover {
-  background-color: #f9f9f9;
-}
-
-/* Ajuste no botão de voltar */
-.back-button img {
-  width: 20px;
-}
-

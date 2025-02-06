@@ -22,7 +22,7 @@ window.onclick = function(event) {
 
 // Função para carregar a planilha fixa
 function carregarPlanilha() {
-  fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQHoi4TrUiaYJvAYSKR_kzWLuIj1ZllnDgV6EiQ0G_TnMt6M9p_AWioKZofOodO6w/pub?gid=1981443210&single=true&output=csv')
+  fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vT4rItrGv98BKuY591MvVLmTu5Dam2Cu2TjylHuDgMv2lCA4AyHkQpAjcCjrolWNvidjrSVN80aRVZs/pub?output=csv')
     .then(response => response.text())
     .then(data => {
       Papa.parse(data, {
@@ -79,13 +79,13 @@ function exibirResultados(resultados) {
     const row = document.createElement('tr');
     row.innerHTML = `
       <td>${item[0]}</td>  
+      <td>${item[1]}</td>   
       <td>${item[2]}</td>   
-      <td>${item[3]}</td>   
-      <td>${item[7]}</td>
+      <td>${item[3]}</td>
+      <td>${item[4]}</td>
       <td>${item[5]}</td>
       <td>${item[6]}</td>
-      <td>${item[8]}</td>
-      <td>${item[8]}</td>
+      <td>${item[7]}</td>
       
     `;
     tbody.appendChild(row);

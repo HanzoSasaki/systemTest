@@ -22,7 +22,7 @@ window.onclick = function(event) {
 
 // Função para carregar a planilha fixa
 function carregarPlanilha() {
-  fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vTtvK3X3YMZzQe3M1I5lz6AkpNcdR8RomqEPefP_meogRr3LeZXELjeHajUYf4Cv_lFItd7YFf84NLf/pub?gid=0&single=true&output=csv')
+  fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vSTFtzGJoM_SkG8ZobHrFdil3nZyZI9zKrPi6-5wDV27-wfly_oAgAcCSq1ylGg55giINmCpCMrMvQC/pub?gid=0&single=true&output=csv')
     .then(response => response.text())
     .then(data => {
       Papa.parse(data, {
@@ -67,8 +67,14 @@ function calcularMargemTotalEMedia(resultados) {
   const margemLiquidaTotal = margensLiquidas.reduce((total, margem) => total + margem, 0);
   const mediaMargemTotal = margemLiquidaTotal / margensLiquidas.length;
 
-  document.getElementById('margemLiquidaTotal').innerText = `Margem Líquida Total: R$ ${margemLiquidaTotal.toFixed(2)}`;
-  document.getElementById('mediaMargemTotal').innerText = `Média da Margem Total: ${(mediaMargemTotal * 100).toFixed(2)}%`;
+  // Definindo a cor para a margem líquida total
+  const classeMargemLiquidaTotal = margemLiquidaTotal < 0 ? 'negativo' : 'positivo';
+  const classeMediaMargemTotal = mediaMargemTotal < 0 ? 'negativo' : 'positivo';
+
+  // Exibindo a margem líquida total com a formatação
+  document.getElementById('margemLiquidaTotal').innerHTML = `<strong class="${classeMargemLiquidaTotal}">Margem Líquida Total: R$ ${margemLiquidaTotal.toFixed(2)}</strong>`;
+  // Exibindo a média da margem total com a formatação
+  document.getElementById('mediaMargemTotal').innerHTML = `<strong class="${classeMediaMargemTotal}">Média da Margem Total: ${(mediaMargemTotal * 100).toFixed(2)}%</strong>`;
 }
 
 function exibirResultados(resultados) {
@@ -76,24 +82,29 @@ function exibirResultados(resultados) {
   tbody.innerHTML = '';
 
   resultados.forEach(item => {
+    // Definindo a classe de cor para margem líquida e margem percentual de cada item
+    const classeMargemLiquida = item.margemLiquida < 0 ? 'negativo' : 'positivo';
+    const classeMargemPercentual = item.margemPercentual < 0 ? 'negativo' : 'positivo';
+
     const row = document.createElement('tr');
     row.innerHTML = `
       <td>${item[0]}</td>
-      <td>${item[0]}</td>
       <td>${item[1]}</td>
-      <td>${item[7]}</td>
       <td>${item[2]}</td>
+      <td>${item[8]}</td>
       <td>${item[3]}</td>
       <td>${item[4]}</td>
       <td>${item[5]}</td>
       <td>${item[6]}</td>
-      <td>${item[8]}</td>
-      <td>${item[9]}</td>
-      <td>${item[10]}</td>
+      <td>${item[7]}</td>
+      <td><strong class="${classeMargemLiquida}">R$ ${item.margemLiquida.toFixed(2)}</strong></td>
+      <td><strong class="${classeMargemPercentual}">${item.margemPercentual.toFixed(2)}%</strong></td>
+      <td>${item[11]}</td>
     `;
     tbody.appendChild(row);
   });
 }
+
 
 // Função para filtrar dados
 function filtrarDados(filtro) {
@@ -118,3 +129,6 @@ window.addEventListener('load', function() {
       document.body.classList.add('loaded'); // Adiciona a classe 'loaded' para esconder o loader
   }, 2000); // Tempo do carregamento (em milissegundos), ajustável para 2000 ou 3000
 });
+
+
+

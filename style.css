@@ -21,16 +21,19 @@
 /* Container principal */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('img/1.jpg');
+    background-color: rgb(237, 236, 236);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed; /* Para manter o fundo fixo ao rolar */
+    min-height: 100vh;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 
 /* Container do menu */
 .container {
@@ -41,13 +44,13 @@ body {
     width: 100%;
 }
 
-/* Header com gradiente, sombra e fixo no topo */
+/* Header com gradiente roxo espacial e sombra */
 .header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(45deg, #FFA500, #FF7F50);
+    background: linear-gradient(45deg, #5B0F5E, #B34BE5);
     color: white;
     font-size: 32px;
     padding: 20px;
@@ -70,7 +73,7 @@ body {
 .menu-item {
     width: 180px;
     height: 180px;
-    background-color: #FFA500;
+    background-color: #7A1F78;
     color: white;
     display: flex;
     flex-direction: column;
@@ -91,7 +94,7 @@ body {
 
 /* Efeito de hover nos itens do menu */
 .menu-item:hover {
-    background-color: #FF7F50;
+    background-color: #D662E1;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     transform: scale(1.1);
 }
@@ -107,14 +110,13 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #FFA500;
+    background-color: #7A1F78;
     color: white;
     text-align: center;
     padding: 10px 0;
     font-size: 14px;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
 }
-
 
 /* Responsividade: ajusta o layout para dispositivos menores */
 @media (max-width: 768px) {
